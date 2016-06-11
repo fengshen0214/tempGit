@@ -1,0 +1,48 @@
+
+
+1、给页面body或指定某个按钮加上css
+
+-webkit-touch-callout: none;
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+
+2、把触发按钮改成 <button>播放/暂停<button> or <input type="button" />
+
+3、JS事件绑定成如下
+
+document.getElementById("xxx").addEventListener("touchstart", function(e){
+	if (e&&e.preventDefault){
+    	e.preventDefault(); 
+    }else{
+        window.event.returnValue = false;
+    }
+    // 要执行的程序
+    // xxx
+
+    return false; 
+}, false)
+
+document.getElementById("xxx").addEventListener("touchmove", function(e){
+	if (e&&e.preventDefault){
+    	e.preventDefault(); 
+    }else{
+        window.event.returnValue = false;
+    }
+    return false; 
+}, false)
+
+document.getElementById("xxx").addEventListener("touchend", function(e){
+	if (e&&e.preventDefault){
+    	e.preventDefault(); 
+    }else{
+        window.event.returnValue = false;
+    }
+
+    // 要执行的程序
+    // xxx
+
+    return false; 
+}, false)
